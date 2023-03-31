@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="586.0" styleClass="Anchorbg" stylesheets="@application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.logintochat">
+   <children>
+      <Button fx:id="Submit" alignment="CENTER" layoutX="362.0" layoutY="245.0" minHeight="21.0" mnemonicParsing="false" onAction="#login" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #90EE90;" text="Sign in" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <PasswordField fx:id="password" alignment="CENTER" layoutX="202.0" layoutY="175.0" prefHeight="29.0" prefWidth="179.0" promptText="Your password" styleClass="textfield" stylesheets="@application.css">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </PasswordField>
+      <TextField fx:id="userName" alignment="CENTER" layoutX="202.0" layoutY="128.0" prefHeight="29.0" prefWidth="179.0" promptText="UserName" styleClass="textfield" stylesheets="@application.css">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label fx:id="errorField" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="214.0" prefHeight="19.0" prefWidth="246.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="183.0" layoutY="77.0" prefHeight="35.0" prefWidth="217.0" text="Login to Chat">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label layoutX="123.0" layoutY="245.0" prefHeight="29.0" prefWidth="143.0" text="Don't have an account ?" />
+      <Button fx:id="signup" layoutX="274.0" layoutY="245.0" minHeight="19.0" mnemonicParsing="false" onAction="#signup" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #00BFFF;" text="Sign up" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
