@@ -13,13 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Observable;
-import java.util.jar.Attributes.Name;
-
-import javax.sound.midi.Soundbank;
-
-import com.mysql.cj.x.protobuf.MysqlxNotice.SessionStateChanged.Parameter;
-
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -40,18 +33,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -101,8 +89,8 @@ class ButtonAction {
 		scrollPane.setPrefWidth(423);
 		scrollPane.fitToHeightProperty().set(true);
 		scrollPane.fitToWidthProperty().set(true);
-		scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-		scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+		scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
+		scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
 		scrollPane.setContent(chatBox);
 		scrollPane.setStyle("-fx-background-color:white;");
 		
@@ -543,10 +531,13 @@ class ButtonAction {
 				}
 			}
 		});
-		Pane pane = new Pane();	
-		pane.setStyle("-fx-border-color:#00bfff;" +"-fx-border-style: solid;"+"-fx-border-width: 3;");	
-		pane.getChildren().add(imageView);
+		BorderPane pane = new BorderPane();
+		pane.setMaxHeight(image.getHeight()+3);
+		pane.setMaxWidth(image.getWidth()+3);
+		pane.setStyle("-fx-border-color : #00bfff;"+"-fx-border-width : 3");
+		pane.setCenter(imageView);
 		hBox.getChildren().add(pane);
+		messageHolder.add(hBox);
 		Platform.runLater(new Runnable() {
 			@Override
 			public void run() {
@@ -578,10 +569,13 @@ class ButtonAction {
 				}
 			}
 		});
-		Pane pane = new Pane();	
-		pane.setStyle("-fx-border-color:#00bfff;" +"-fx-border-style: solid;"+"-fx-border-width: 3;");	
-		pane.getChildren().add(imageView);
+		BorderPane pane = new BorderPane();
+		pane.setMaxHeight(image.getHeight()+3);
+		pane.setMaxWidth(image.getWidth()+3);
+		pane.setStyle("-fx-border-color : #00bfff;"+"-fx-border-width : 3");
+		pane.setCenter(imageView);
 		hBox.getChildren().add(pane);
+		messageHolder.add(hBox);
 		Platform.runLater(new Runnable() {
 			@Override
 			public void run() {
